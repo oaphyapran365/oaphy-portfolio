@@ -1,3 +1,87 @@
+/* Added by Oaphy: Adjust this value depending on your navbar height */
+body {
+    padding-top: 70px;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Height of your fixed navbar (approx) */
+:root {
+    --nav-height: 70px;   /* adjust if your navbar is taller/shorter */
+}
+.highlight-link {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 3px;
+    -webkit-box-shadow: inset 0 -3px 0 #007bff;
+    box-shadow: inset 0 -3px 0 #007bff;
+}
+
+.highlight-link:hover {
+    -webkit-box-shadow: inset 0 -33px 0 0 #007bff;
+    box-shadow: inset 0 -33px 0 0 #007bff;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+/* Skills layout */
+.skillz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;          /* space between columns */
+    margin-top: 0;
+}
+
+/* Make each category a flexible column */
+.skillz__category {
+    flex: 1 1 0;        /* all columns share the row evenly */
+    min-width: 160px;   /* prevents them from getting too skinny */
+}
+
+/* Headings + items spacing */
+.skillz__category__label {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.skillz__category__item {
+    margin-bottom: 0.25rem;
+}
+
+/* Optional: allow a bit more width, or remove this line entirely */
+.section.skills .section__content {
+    max-width: 1200px;
+}
+
+/* Mobile: stack categories vertically */
+@media (max-width: 768px) {
+    .skillz {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+
+
+
+/* Added by Oaphy: ends  */
+
+
+
+
+
 @font-face {
     font-family: Apercu;
     src: url(../fonts/apercu/Apercu-Light.eot);
@@ -170,18 +254,20 @@ strong {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 100px 170px
+    padding: 40px 170px;
+    scroll-margin-top: calc(var(--nav-height) + 5px);
+    /* the +10px is just a little breathing room */
 }
 
 @media screen and (max-width: 1280px) {
     .section {
-        padding: 100px
+        padding: 40px
     }
 }
 
 @media screen and (max-width: 1024px) {
     .section {
-        padding: 50px
+        padding: 30px
     }
 }
 
@@ -730,7 +816,7 @@ strong {
 }
 
 .experience .jobs {
-    margin-bottom: 100px
+    margin-bottom: 40px
 }
 
 .experience .job {
